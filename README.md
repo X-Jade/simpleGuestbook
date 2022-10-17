@@ -1,2 +1,2 @@
-# AWS-PBL-Guestbook
-Project Based Learning as a Cloud Computing Student in AWS Educate
+# Simple-Guestbook
+A simple web to demonstrate database connection
