@@ -3,14 +3,20 @@ session_start();
 include "database/db.php";
 // $eventid = $_SESSION['eventid'];
 $username = $_SESSION['username'];
+if(isset($_SESSION['username'])==false){
+    die ("1");
+    header("location: ./login.php");
+}
 // echo $userid;
-if($username == NULL)
+
+else if($username == NULL)
 {
+    die ("2");
     header("location: ./login.php");
 }
 
 else
-{ $username = $_GET['userid'];?>
+{ $username = $_SESSION['username'];?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +49,7 @@ else
             </div>
             <br>
             <div class="form">
-                <form action="controller/addMessage.php?userid=<?$username?>"  method="POST">
+                <form action="controller/addMessage.php"  method="POST">
                     <div class="form-content">
                         <label for="name" class="label-heading">Name</label>
                         <br>
