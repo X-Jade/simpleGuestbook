@@ -4,14 +4,14 @@ include "database/db.php";
 // $eventid = $_SESSION['eventid'];
 $username = $_SESSION['username'];
 if(isset($_SESSION['username'])==false){
-    die ("1");
+//     die ("1");
     header("location: ./login.php");
 }
 // echo $userid;
 
 else if($username == NULL)
 {
-    die ("2");
+//     die ("2");
     header("location: ./login.php");
 }
 
