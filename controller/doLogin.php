@@ -4,8 +4,8 @@ include "./../database/db.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
     // $eventID = $_POST['eventid'];
     
     //$hashpassword=sha1($password);
@@ -32,8 +32,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             session_regenerate_id();
             $_SESSION['username'] = $username;
             // $_SESSION['userid'] = $userid;
+            // redirect('./../view.php');
 
-            header("location: ./../view.php?userid=$username");
+            header("location: ./../view.php");
             
             // if($result2->num_rows > 0)
             // {

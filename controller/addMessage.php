@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $min = $info['minutes'];
     $sec = $info['seconds'];
 
-    $username = $_GET['userid'];
+    $username = $_SESSION['userid'];
 
     $current_date = date("F j Y g:i a");
     $name = $_POST['name'];
@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $sql = "INSERT INTO messages VALUES (null, '$name', '$message')";
 	    $addGuest = $conn->query($sql);
         $_SESSION['msg'] = 'add message Success!';
-	    header("location: ./../view.php?userid=$username");
+	    header("location: ./../view.php");
     }
 }
 
